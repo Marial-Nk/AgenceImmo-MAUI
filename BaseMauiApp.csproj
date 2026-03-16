@@ -92,6 +92,7 @@
 	  <Compile Remove="AgenceImmo.DataAccess\**\*.cs" />
 	  <Compile Remove="AgenceImmo.Business\**\*.cs" />
 	  <Compile Remove="AgenceImmo.TestConsole\**\*.cs" />
+	  <Compile Remove="Architecture\**\*.cs" />
 	</ItemGroup>
 
 </Project>

@@ -18,6 +18,24 @@ public partial class ListeBiensPage : ContentPage
     {
         base.OnNavigatedTo(args);
         BindingContext = await InitListeBiensViewModel();
+        AjusterColonnes(Width);
+    }
+
+    protected override void OnSizeAllocated(double width, double height)
+    {
+        base.OnSizeAllocated(width, height);
+        AjusterColonnes(width);
+    }
+
+    private void AjusterColonnes(double largeur)
+    {
+        if (BiensGridLayout == null) return;
+        BiensGridLayout.Span = largeur switch
+        {
+            < 600  => 1,
+            < 1000 => 2,
+            _      => 3
+        };
     }
 
     private async Task<ListeBiensViewModel> InitListeBiensViewModel()

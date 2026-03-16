@@ -185,11 +185,13 @@
                         </Grid>
 
                         <!-- Grille 3 colonnes -->
-                        <CollectionView ItemsSource="{Binding Biens}"
+                        <CollectionView x:Name="BiensCollection"
+                                        ItemsSource="{Binding Biens}"
                                         SelectionMode="Single"
                                         SelectionChanged="OnBienSelected">
                             <CollectionView.ItemsLayout>
-                                <GridItemsLayout Orientation="Vertical" Span="3"
+                                <GridItemsLayout x:Name="BiensGridLayout"
+                                                 Orientation="Vertical" Span="3"
                                                  HorizontalItemSpacing="14" VerticalItemSpacing="14"/>
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
