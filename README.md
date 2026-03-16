@@ -1,6 +1,6 @@
 # AgenceImmo - Application MAUI
 
-Application de gestion d'une agence immobilière développée avec .NET MAUI dans le cadre du cours de Programmation et Gestion de Bases de Données (ESA, 2025-2026).
+Application de gestion d'une agence immobilière développée avec .NET MAUI.
 
 ## Structure du projet
 
