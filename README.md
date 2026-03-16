@@ -49,6 +49,17 @@ Créez un fichier `appsettings.json` dans `AgenceImmo.TestConsole/` avec la cha�
 dotnet ef database update --project AgenceImmo.DataAccess --startup-project AgenceImmo.TestConsole
 ```
 
+## Choix de modélisation
+
+### Personne vs Utilisateur
+
+Ces deux entités sont volontairement séparées et représentent des rôles distincts :
+
+- **`Utilisateur`** — agent interne de l'agence (dispose d'un login/password, gère les biens et les événements)
+- **`Personne`** — contact externe (client, propriétaire, locataire), participant aux événements via `ParticipationEvenement`
+
+Le rôle d'une personne dans un événement est précisé grâce à l'enum `RolePersonne` (Acheteur, Vendeur, Locataire, Propriétaire), permettant à une même personne de participer à plusieurs événements avec des rôles différents.
+
 ## Auteur
 
 Henriette Nkondi — ESA 2025-2026
