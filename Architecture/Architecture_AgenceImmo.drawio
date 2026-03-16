@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
+  <diagram name="Architecture AgenceImmo" id="arch-agenceimmo">
+    <mxGraphModel dx="1328" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titre" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;strokeColor=none;fillColor=none;" value="Architecture en couches — Projet AgenceImmo (Nkondi Henriette)" vertex="1">
+          <mxGeometry height="30" width="860" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="pres_layer" parent="1" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;html=1;" value="Presentation Layer" vertex="1">
+          <mxGeometry height="140" width="880" x="40" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="console_box" parent="pres_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;AgenceImmo.TestConsole&lt;/b&gt;&lt;br&gt;Program.cs" vertex="1">
+          <mxGeometry height="70" width="200" x="20" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="maui_box" parent="pres_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;BaseMauiApp (MAUI)&lt;/b&gt;&lt;br&gt;DashboardPage | ListeBiensPage | DetailsBienPage | NouveauBienPage&lt;br&gt;ViewModels | MauiProgram | AppShell" vertex="1">
+          <mxGeometry height="70" width="580" x="260" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="bus_layer" parent="1" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;html=1;" value="Business Layer" vertex="1">
+          <mxGeometry height="140" width="880" x="40" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="iface_box" parent="bus_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;Interfaces&lt;/b&gt;&lt;br&gt;IBienService" vertex="1">
+          <mxGeometry height="70" width="190" x="20" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_box" parent="bus_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;Services&lt;/b&gt;&lt;br&gt;BienService" vertex="1">
+          <mxGeometry height="70" width="190" x="250" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="model_box" parent="bus_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;Models / Entités&lt;/b&gt;&lt;br&gt;Bien | Evenement | Adresse&lt;br&gt;Utilisateur | TypeBien | StatutBien" vertex="1">
+          <mxGeometry height="70" width="360" x="480" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="dal_layer" parent="1" style="swimlane;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=13;html=1;" value="Data Access Layer (DAL)" vertex="1">
+          <mxGeometry height="140" width="880" x="40" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="ctx_box" parent="dal_layer" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;html=1;" value="&lt;b&gt;AgenceImmo.DataAccess&lt;/b&gt;&lt;br&gt;AgenceImmobiliereContext&lt;br&gt;DesignTimeFactory | Migrations" vertex="1">
+          <mxGeometry height="70" width="270" x="20" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="db_box" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="&lt;b&gt;SQL Server&lt;/b&gt;&lt;br&gt;AgenceImmobiliere" vertex="1">
+          <mxGeometry height="90" width="240" x="360" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="arr1" edge="1" parent="1" source="pres_layer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;" target="bus_layer" value="utilise">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr2" edge="1" parent="1" source="bus_layer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;" target="dal_layer" value="utilise">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr3" edge="1" parent="1" source="dal_layer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=10;" target="db_box" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

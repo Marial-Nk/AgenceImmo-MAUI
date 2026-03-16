@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BaseMauiApp.NouveauBienPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="#F2F2F2">
+
+    <Grid ColumnDefinitions="280,*" Padding="16" ColumnSpacing="16">
+
+        <!-- ========== SIDEBAR ========== -->
+        <Border Grid.Column="0"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 24"
+                Stroke="Transparent">
+            <Border.Shadow>
+                <Shadow Brush="#CCCCCC" Offset="2,2" Radius="12" Opacity="0.15"/>
+            </Border.Shadow>
+
+            <ScrollView>
+                <VerticalStackLayout Padding="12,16" Spacing="2">
+
+                    <!-- Tableau de bord -->
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 10"
+                            Stroke="Transparent" Padding="12,10" Margin="4,2">
+                        <Label Text="🏠  Tableau de bord" FontAttributes="Bold" FontSize="14" TextColor="#333">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnRetourDashboardTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <!-- BIENS (section active) -->
+                    <Grid ColumnDefinitions="4,*" Margin="0,4,0,4">
+                        <BoxView Grid.Column="0" Color="#4AD395" CornerRadius="2"/>
+                        <Border Grid.Column="1"
+                                BackgroundColor="#E8F8F2"
+                                StrokeShape="RoundRectangle 10"
+                                Stroke="Transparent" Padding="12,10">
+                            <Label Text="🏢  Biens" FontAttributes="Bold" FontSize="14" TextColor="#1E1E2D"/>
+                        </Border>
+                    </Grid>
+
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="📋  Liste des biens" FontSize="13" TextColor="#888">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnListeBiensTapped"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </Border>
+
+                    <!-- Nouveau bien (actif) -->
+                    <Grid ColumnDefinitions="4,*" Margin="28,1,4,1">
+                        <BoxView Grid.Column="0" Color="#4AD395" CornerRadius="2"/>
+                        <Border Grid.Column="1"
+                                BackgroundColor="#E8F8F2"
+                                StrokeShape="RoundRectangle 8"
+                                Stroke="Transparent" Padding="10,7">
+                            <Label Text="➕  Nouveau bien" FontSize="13" FontAttributes="Bold" TextColor="#1E1E2D"/>
+                        </Border>
+                    </Grid>
+
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="🕐  Historique des statuts" FontSize="13" TextColor="#888"/>
+                    </Border>
+
+                    <!-- Personnes -->
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 10"
+                            Stroke="Transparent" Padding="12,10" Margin="4,2">
+                        <Label Text="👥  Personnes" FontAttributes="Bold" FontSize="14" TextColor="#333"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="📋  Liste des personnes" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="➕  Nouvelle personne" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="🔗  Associés bien-personne" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="🕐  Historique des interactions" FontSize="13" TextColor="#888"/>
+                    </Border>
+
+                    <!-- Événements -->
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 10"
+                            Stroke="Transparent" Padding="12,10" Margin="4,2">
+                        <Label Text="📅  Événements" FontAttributes="Bold" FontSize="14" TextColor="#333"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="📋  Liste des événements" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="➕  Nouvel événement" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="🕐  Historique des interactions" FontSize="13" TextColor="#888"/>
+                    </Border>
+
+                    <!-- Documents -->
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 10"
+                            Stroke="Transparent" Padding="12,10" Margin="4,2">
+                        <Label Text="📁  Documents" FontAttributes="Bold" FontSize="14" TextColor="#333"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="📋  Tous les documents" FontSize="13" TextColor="#888"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="➕  Nouveau document" FontSize="13" TextColor="#888"/>
+                    </Border>
+
+                    <!-- Utilisateurs -->
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 10"
+                            Stroke="Transparent" Padding="12,10" Margin="4,2">
+                        <Label Text="👤  Utilisateurs" FontAttributes="Bold" FontSize="14" TextColor="#333"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="🔐  Déconnexion" FontSize="13" TextColor="#FF6B6B"/>
+                    </Border>
+                    <Border BackgroundColor="Transparent" StrokeShape="RoundRectangle 8"
+                            Stroke="Transparent" Padding="10,7" Margin="28,1,4,1">
+                        <Label Text="👥  Gestion des utilisateurs" FontSize="13" TextColor="#888"/>
+                    </Border>
+
+                </VerticalStackLayout>
+            </ScrollView>
+        </Border>
+
+        <!-- ========== CONTENU ========== -->
+        <Border Grid.Column="1"
+                BackgroundColor="White"
+                StrokeShape="RoundRectangle 20"
+                Stroke="#644CFF"
+                StrokeThickness="1">
+
+            <Grid RowDefinitions="Auto,*">
+
+                <!-- En-tête violet -->
+                <Grid Grid.Row="0" BackgroundColor="#644CFF" Padding="24,18"
+                      ColumnDefinitions="Auto,*">
+                    <Border Grid.Column="0"
+                            BackgroundColor="#7B65FF"
+                            StrokeShape="RoundRectangle 20"
+                            Stroke="Transparent"
+                            Padding="14,8"
+                            Margin="0,0,20,0">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnRetourDashboardTapped"/>
+                        </Border.GestureRecognizers>
+                        <Label Text="← Retour à la liste des biens"
+                               TextColor="White" FontSize="13"/>
+                    </Border>
+                    <Label Grid.Column="1"
+                           Text="Nouveau Bien"
+                           TextColor="White" FontSize="22" FontAttributes="Bold"
+                           VerticalOptions="Center"/>
+                </Grid>
+
+                <!-- Corps du formulaire -->
+                <ScrollView Grid.Row="1" Padding="24">
+                    <Grid ColumnDefinitions="200,*" ColumnSpacing="24">
+
+                        <!-- Identification -->
+                        <VerticalStackLayout Grid.Column="0" Spacing="12">
+                            <Label Text="Identification"
+                                   FontAttributes="Bold" FontSize="16" TextColor="#1E1E2D"/>
+                            <Border StrokeDashArray="4,4"
+                                    Stroke="#644CFF"
+                                    StrokeThickness="1.5"
+                                    BackgroundColor="#F8F6FF"
+                                    Padding="16"
+                                    StrokeShape="RoundRectangle 14"
+                                    HeightRequest="180">
+                                <VerticalStackLayout VerticalOptions="Center"
+                                                     HorizontalOptions="Center"
+                                                     Spacing="10">
+                                    <Label Text="🏠" FontSize="44"
+                                           HorizontalOptions="Center" Opacity="0.5"/>
+                                    <Label Text="Glissez ou cliquez pour ajouter"
+                                           HorizontalTextAlignment="Center"
+                                           TextColor="#AAAAAA" FontSize="12"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </VerticalStackLayout>
+
+                        <!-- Formulaire Information -->
+                        <Border Grid.Column="1"
+                                BackgroundColor="White"
+                                Padding="24"
+                                StrokeShape="RoundRectangle 14"
+                                Stroke="#EEEEEE"
+                                StrokeThickness="1">
+                            <Border.Shadow>
+                                <Shadow Brush="#644CFF" Offset="3,3" Radius="15" Opacity="0.08"/>
+                            </Border.Shadow>
+
+                            <Grid ColumnDefinitions="*,*,*"
+                                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                                  ColumnSpacing="16" RowSpacing="12">
+
+                                <Label Grid.Row="0"
+                                       Text="Information"
+                                       FontAttributes="Bold" FontSize="18" TextColor="#1E1E2D"/>
+
+                                <!-- Ligne 1 -->
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="0" Spacing="4">
+                                    <Label Text="Type de bien" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Picker TextColor="Black">
+                                            <Picker.Items>
+                                                <x:String>Maison</x:String>
+                                                <x:String>Appartement</x:String>
+                                                <x:String>Studio</x:String>
+                                                <x:String>Villa</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="1" Spacing="4">
+                                    <Label Text="Type de contrat" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Picker TextColor="Black">
+                                            <Picker.Items>
+                                                <x:String>Location</x:String>
+                                                <x:String>Vente</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="1" Grid.Column="2" Spacing="4">
+                                    <Label Text="Prix (€)" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Entry TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <!-- Ligne 2 -->
+                                <VerticalStackLayout Grid.Row="2" Grid.Column="0" Spacing="4">
+                                    <Label Text="Surface (m²)" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Entry TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="2" Grid.Column="1" Spacing="4">
+                                    <Label Text="PEB" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Picker TextColor="Black">
+                                            <Picker.Items>
+                                                <x:String>A</x:String>
+                                                <x:String>B</x:String>
+                                                <x:String>C</x:String>
+                                                <x:String>D</x:String>
+                                                <x:String>E</x:String>
+                                                <x:String>F</x:String>
+                                                <x:String>G</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="2" Grid.Column="2" Spacing="4">
+                                    <Label Text="Nbr chambres" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Entry TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <!-- Ligne 3 -->
+                                <VerticalStackLayout Grid.Row="3" Grid.Column="0" Spacing="4">
+                                    <Label Text="Nbr façades" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Entry TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="3" Grid.Column="1" Spacing="4">
+                                    <Label Text="Adresse" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Entry TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="3" Grid.Column="2" Spacing="4">
+                                    <Label Text="Statut" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Picker TextColor="Black">
+                                            <Picker.Items>
+                                                <x:String>Disponible</x:String>
+                                                <x:String>Loué</x:String>
+                                                <x:String>Vendu</x:String>
+                                                <x:String>En négociation</x:String>
+                                                <x:String>Retiré</x:String>
+                                            </Picker.Items>
+                                        </Picker>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <!-- Ligne 4 -->
+                                <VerticalStackLayout Grid.Row="4" Grid.Column="0" Spacing="4">
+                                    <Label Text="Disponible le" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <DatePicker TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout Grid.Row="4" Grid.Column="1" Spacing="4">
+                                    <Label Text="Créé le" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <DatePicker TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <!-- Description -->
+                                <VerticalStackLayout Grid.Row="5" Grid.Column="0"
+                                                     Grid.ColumnSpan="3" Spacing="4">
+                                    <Label Text="Description" FontSize="12" TextColor="#AAAAAA"/>
+                                    <Border Style="{StaticResource FieldBorder}">
+                                        <Editor HeightRequest="90" TextColor="Black"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <!-- Switch -->
+                                <HorizontalStackLayout Grid.Row="6" Spacing="10">
+                                    <Switch Style="{StaticResource PublishSwitch}"/>
+                                    <Label Text="Publier ce Bien"
+                                           TextColor="Black" VerticalOptions="Center"/>
+                                </HorizontalStackLayout>
+
+                                <!-- Boutons -->
+                                <HorizontalStackLayout Grid.Row="7" Spacing="16">
+                                    <Button Text="Enregistrer"
+                                            Style="{StaticResource PrimaryButton}"
+                                            WidthRequest="130"/>
+                                    <Button Text="Annuler"
+                                            Style="{StaticResource SecondaryButton}"
+                                            WidthRequest="110"
+                                            Clicked="OnRetourDashboardTapped"/>
+                                </HorizontalStackLayout>
+
+                            </Grid>
+                        </Border>
+
+                    </Grid>
+                </ScrollView>
+            </Grid>
+        </Border>
+
+    </Grid>
+</ContentPage>

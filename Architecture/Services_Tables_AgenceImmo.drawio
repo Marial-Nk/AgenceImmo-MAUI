@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0" version="29.6.1">
+  <diagram name="Services et Tables" id="services-tables">
+    <mxGraphModel dx="996" dy="572" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="titre" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=15;fontStyle=1;strokeColor=none;fillColor=none;" value="Services de l&#39;application et tables correspondantes — Projet AgenceImmo (Nkondi Henriette)" vertex="1">
+          <mxGeometry height="35" width="860" x="40" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="bien_svc" parent="1" style="swimlane;startSize=35;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;html=1;" value="BienService" vertex="1">
+          <mxGeometry height="200" width="270" x="40" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="bien_tables" parent="bien_svc" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;spacingLeft=8;spacingTop=6;" value="&lt;b&gt;Tables / Entités&lt;/b&gt;&lt;br&gt;• Bien&lt;br&gt;• Evenement&lt;br&gt;• Adresse&lt;br&gt;• HistoriqueStatut&lt;br&gt;• Appartenance&lt;br&gt;• TypeBien &lt;i&gt;(enum)&lt;/i&gt;&lt;br&gt;• StatutBien &lt;i&gt;(enum)&lt;/i&gt;" vertex="1">
+          <mxGeometry height="145" width="260" x="5" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="pers_svc" parent="1" style="swimlane;startSize=35;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;html=1;" value="PersonneService" vertex="1">
+          <mxGeometry height="180" width="240" x="340" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pers_tables" parent="pers_svc" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;spacingLeft=8;spacingTop=6;" value="&lt;b&gt;Tables / Entités&lt;/b&gt;&lt;br&gt;• Personne&lt;br&gt;• Bien&lt;br&gt;• Appartenance&lt;br&gt;• Adresse" vertex="1">
+          <mxGeometry height="130" width="230" x="5" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="util_svc" parent="1" style="swimlane;startSize=35;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=13;html=1;" value="UtilisateurService" vertex="1">
+          <mxGeometry height="160" width="240" x="610" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="util_tables" parent="util_svc" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fillColor=#fff2cc;strokeColor=#d6b656;spacingLeft=8;spacingTop=6;" value="&lt;b&gt;Tables / Entités&lt;/b&gt;&lt;br&gt;• Utilisateur" vertex="1">
+          <mxGeometry height="105" width="230" x="5" y="43" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
